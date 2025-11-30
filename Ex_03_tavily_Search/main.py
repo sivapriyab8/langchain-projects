@@ -17,7 +17,7 @@ def search(query:str) -> str:
     Args:
         query: The query to search for
     Returns:
-        The search result
+        The search results
     """
     print(f"Searching for {query}")
     #return "Tokyo weather is sunny"
