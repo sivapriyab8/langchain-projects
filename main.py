@@ -1,3 +1,36 @@
+<<<<<<< HEAD
+from dotenv import load_dotenv
+load_dotenv()
+
+from langchain.agents import create_agent
+from langchain.tools import tool
+from langchain_core.messages import HumanMessage
+from langchain_openai import ChatOpenAI
+from tavily import TavilyClient
+
+tavily
+
+@tool
+def search(query:str) -> str:
+    """
+    Tool that searvhes over internet
+    Args:
+        query: The query to search for
+    Returns:
+        The search result
+    """
+    print(f"Searching for {query}")
+    return "Tokyo weather is sunny"
+
+llm = ChatOpenAI()
+tools=[search]
+agent = create_agent(model=llm,tools=tools)
+def main():
+    print("Hello from langchain-course!")
+    result=agent.invoke({"messages":HumanMessage(content="Waht is the weather in Tokyo")})
+    print(result)
+
+=======
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 #from langchain_ollama import ChatOllama
@@ -36,6 +69,7 @@ llm = ChatOpenAI(temperature=0,model="gpt-5")
 chain = summary_prompt_template | llm
 response = chain.invoke(input={"information":information})
 print(response.content)
+>>>>>>> origin/main
 
 if __name__ == "__main__":
     main()
